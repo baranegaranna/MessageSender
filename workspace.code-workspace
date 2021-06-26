@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.languageServer": "Pylance",
+		"python.analysis.autoImportCompletions": false,
+		// "python.analysis.diagnosticMode": "workspace",
+		"python.analysis.extraPaths": [
+			"."
+		],
+		// "python.analysis.completeFunctionParens": true,
+		"python.analysis.diagnosticSeverityOverrides": {
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"editor.fontFamily": "Consolas, Koodak, 'Courier New', monospace",
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"python.languageServer": "Pylance",
+	"python.analysis.extraPaths": ["."]
+}

@@ -1,21 +1,21 @@
 from logging import disable
 from telegram import Bot, Update
-from telegram.ext import Dispatcher, PicklePersistence
+from telegram.ext import Updater, Dispatcher, PicklePersistence
 
 from handlers import handlers
 
-from settings import token, persistence_filename
+from settings import token, persistence_filename, group_chat_id, bot_is_working_message
 
 from flask import Flask, request
 from flask_sslify import SSLify
 
 def settitng_up_bot_and_dispatcher(token, persistence_filename=persistence_filename):
-	bot = Bot(token)
 	bot_persistence = PicklePersistence(filename=persistence_filename)
 
-	dispatcher = Dispatcher(bot, None,
-						use_context=True,
-						persistence=bot_persistence)
+	updater = Updater(token=token, persistence=bot_persistence, use_context=True)
+
+	bot = updater.bot
+	dispatcher = updater.dispatcher
 
 	for hdlr in handlers:
 		dispatcher.add_handler(hdlr)
@@ -27,10 +27,16 @@ SSLify(app)
 
 bot, dispatcher = settitng_up_bot_and_dispatcher(token, persistence_filename=persistence_filename)
 
+@app.route('/')
+def website():
+    return 'MessageSender2'
+
 @app.route('/{}'.format(token), methods=['POST'])
 def update():
 	dispatcher.process_update(Update.de_json(request.json, bot))
 	return 'ok'
+
+bot.sendMessage(chat_id=group_chat_id, text=bot_is_working_message)
 
 #! if you have not set webhook yet comment
 #! codes above and uncomment codes below:

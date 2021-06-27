@@ -9,7 +9,7 @@ This bot helps you to transfer messages. You make a group give the bot group cha
 You have to place your own things in ``settings.py``. open it with a text editor like notepad or something else. 
 * Get a token from [BotFather](https://t.me/BotFather). You have to make a bot to do this. Replace ``Token`` with your token but DO NOT REMOVE ' '. <br>
 Don't share your token with others and keep it safe. In case someone got your token you can revoke the token <br>
-* Make an account in [Python Anywhere](https://www.pythonanywhere.com/). If you don't confirm your email address you won't be able to reset password later. Replace your python anywhere username with ``username``.  <br>
+* Make an account in [Python Anywhere](https://www.pythonanywhere.com/). If you don't confirm your email address you won't be able to reset password later. Replace your python anywhere username with ``Username``.  <br>
 * Create a group and add bot. Find chat id or use your own chat id. change ``-123456`` to chat id you want. <br>
 You can use [Show Json Bot](https://t.me/ShowJsonBot) to find group chat id. Just add it to group and you can remove it later.
 <br>Remember if you upgrade group to supergroup chat id will change. 
